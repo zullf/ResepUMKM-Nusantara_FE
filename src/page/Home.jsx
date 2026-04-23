@@ -6,24 +6,19 @@ import RecipeFormModal from "../components/RecipeFormModal";
 import Pagination from "../components/Pagination";
 
 export default function Home() {
-  const [filters, setFilters] = useState({ page: 1, limit: 6 });
+  const [filters, setFilters] = useState({ page: 1, limit: 6, search: "" });
   const { data, refresh } = useRecipes(filters);
   const [open, setOpen] = useState(false);
-  const [search, setSearch] = useState("");
-  const isNextDisabled = data.length < filters.limit;
+  const isNextDisabled = (data ?? []).length < filters.limit;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-100 via-yellow-50 flex px-6 py-10">
-      
       <aside className="w-64 bg-white shadow-md p-4 rounded-2xl mt-12 h-fit">
-        <h2 className="text-lg font-semibold mb-4 text-gray-700">
-          Filter
-        </h2>
+        <h2 className="text-lg font-semibold mb-4 text-gray-700">Filter</h2>
         <FilterBar filters={filters} setFilters={setFilters} />
       </aside>
 
       <main className="flex-1 ml-8">
-        
         <div className="mb-6">
           <h1 className="text-3xl font-bold text-gray-800 mb-6">
             Resep Nusantara UMKM
@@ -33,8 +28,14 @@ export default function Home() {
             <input
               type="text"
               placeholder="Cari resep..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              value={filters.search}
+              onChange={(e) =>
+                setFilters((prev) => ({
+                  ...prev,
+                  search: e.target.value,
+                  page: 1,
+                }))
+              }
               className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
             />
 
@@ -47,14 +48,13 @@ export default function Home() {
           </div>
         </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
-            {data.map((r) => (
-              <RecipeCard key={r.id} resep={r} refresh={refresh} />
-            ))}
-          </div>
-          
-        <div className="mt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-start">
+          {data.map((r) => (
+            <RecipeCard key={r.id} resep={r} refresh={refresh} />
+          ))}
+        </div>
 
+        <div className="mt-6">
           <Pagination
             page={filters.page}
             setPage={(newPage) =>
@@ -69,10 +69,7 @@ export default function Home() {
       </main>
 
       {open && (
-        <RecipeFormModal
-          onClose={() => setOpen(false)}
-          refresh={refresh}
-        />
+        <RecipeFormModal onClose={() => setOpen(false)} refresh={refresh} />
       )}
     </div>
   );
