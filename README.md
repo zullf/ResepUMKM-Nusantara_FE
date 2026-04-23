@@ -12,19 +12,26 @@ UMKM di Indonesia dengan menyediakan platform berbagi resep masakan tradisional 
 
 ## Fitur Utama
 
-- Menampilkan daftar resep dalam bentuk card (responsive)
-- Filter resep berdasarkan kategori & tingkat kesulitan
-- Tambah resep dengan bahan & langkah dinamis
+- Menampilkan daftar resep dalam bentuk card (responsive grid)
+- Filter resep menggunakan dropdown berdasarkan kategori & tingkat kesulitan
+- Form tambah resep dengan dynamic field (bisa tambah lebih dari 1 bahan & langkah)
+- Validasi form (minimal 1 bahan dan 1 langkah sebelum submit)
 - Hapus resep
-- Detail resep (accordion: bahan & langkah)
+- Detail resep menggunakan accordion (collapsible component)
+- State management reaktif terhadap perubahan filter dan pagination
+- Konfirmasi sebelum submit data
+- Feedback setelah aksi (notifikasi sukses / gagal)
 
 ---
 
 ## UI/UX
 - Menggunakan Tailwind CSS
+- Menggunakan component-based design pattern
 - Icon modern dari Lucide React
-- Animasi accordion pada detail resep
+- Animasi CSS transition saat expand/collapse accordion
+- Responsive layout menggunakan grid system
 - Modal interaktif untuk tambah resep
+- Form tambah resep dirancang user-friendly dengan input dinamis
 
 ---
 
