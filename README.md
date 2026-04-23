@@ -31,9 +31,9 @@ UMKM di Indonesia dengan menyediakan platform berbagi resep masakan tradisional 
 ## Screenshot Preview
 
 <p>
-  <img src="assets/RegistScreen.jpeg" width="250" style="margin-right:10px;"/>
-  <img src="assets/LoginScreen.jpeg" width="250" style="margin-right:10px;"/>
-  <img src="assets/HomeScreen.jpeg" width="250" style="margin-right:10px;"/>
+  <img src="public/HomePage.jpeg" width="1000" style="margin-right:10px;"/>
+  <img src="public/AddPage.jpeg" width="1000" style="margin-right:10px;"/>
+  <img src="public/Filter.jpeg" width="1000" style="margin-right:10px;"/>
 </p>
 
 ---
