@@ -35,6 +35,15 @@ UMKM di Indonesia dengan menyediakan platform berbagi resep masakan tradisional 
 
 ---
 
+## Tech Stack
+* React.js (Hooks)
+* Tailwind CSS
+* Lucide React (Icons) 
+* Axios
+
+
+---
+
 ## Screenshot Preview
 
 <p>
