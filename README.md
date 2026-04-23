@@ -45,8 +45,6 @@ UMKM di Indonesia dengan menyediakan platform berbagi resep masakan tradisional 
 ---
 ## Cara Menjalankan
 
-Aplikasi ini menggunakan **Expo**.
-
 ### 1. Clone Repository
 ```bash
 git clone <URL_REPOSITORY>
