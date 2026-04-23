@@ -34,7 +34,7 @@ UMKM di Indonesia dengan menyediakan platform berbagi resep masakan tradisional 
   <h3> Home Screen
   <img src="public/HomePage.png" width="1000" style="margin-right:10px;"/>
   </h3>
-  <h3> Filter Add Resep
+  <h3> Fitur Add Resep
   <img src="public/AddPage.png" width="1000" style="margin-right:10px;"/>
   </h3>
   <h3> Fitur Filter
